@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books Products - SaFaStore</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css" integrity="INTEGRITY_VALUE" crossorigin="anonymous"/>
+
+</head>
+<body>
+<div class="header"> 
+    
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" width = "125px">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('books') }}">Books</a></li>
+                    <li><a href="">Clothes</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Account</a></li>
+                </ul>
+            </nav>
+            <img src="images/cart.png" width="30px">
+        </div>
+    </div>
+</div>
+<!----------single product details--------->
+    
+    <div class="small-container">
+        <div class="row">
+            <div class="col-2">
+                <img src="{{ book['img-url'] }}" alt="Book Image" width="100%">
+            </div>
+            <div class="col-2-p">
+                <p>Home / T-shirt</p>
+                <h1>{{ book['title'] }}</h1>
+                    <p>Author: {{ book['author'] }}</p>
+                <h4>Price: {{ book['year'] }}</h4>
+                 
+                 <!---select name="" id="">
+                     <option>Select Size</option>
+                     <option>XXL</option>
+                     <option>XL</option>
+                     <option>Large</option>
+                     <option>Medium</option>
+                     <option>Small</option>
+                 </select---->
+                 <input type="number" value="1">
+                 <!---a href="" class="btn">Add To Cart</a--->
+                 <form method="POST" action="/cart">
+                    <input type="hidden" name="name" value="{{ book['title'] }}">
+                    <button type="submit" class="btn">Add To Cart</button>
+                 </form>
+                 <!---form method="POST" action="/products">
+                      <!---input type="text" name="name" id="name" placeholder="Enter book name">
+                      <input type="hidden" name="name" value={{ 1984 }} id="name">
+                      <button type="submit" id="name-button">Submit</button>
+                 </form--->
+
+                 <p>Prediction book: <span id="book-prediction"></span></p>
+                 <p>Url book:</p>
+                <img src="" id="url-prediction">
+
+                 <!------p>Url book: <span id="url-prediction"></span></p------>
+
+                 <h3>Product Details</h3>
+                 <p>Give your summer wardrobe a style upgrade with the HRX Men's Active T-Shirt. Team it with a pair of shorts for morning workout or a denims for an evening out the guys</p>
+            </div>
+        </div>
+    </div>
+                   
+    
+<!---------Footer-------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and ios mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png">
+                        <img src="images/app-store.png">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="">
+                    <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2023</p>
+        </div>
+    </div>
+</body>
+</html>
